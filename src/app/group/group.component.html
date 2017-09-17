@@ -1,0 +1,13 @@
+<h2>Groups:</h2>
+<ul class="groups">
+  <li *ngFor="let group of groups" (click)="onSelect(group)"
+      [class.selected]="group === selectedGroup">
+    <span class="badge">{{group.groupNumber}}</span>
+    <span>{{group.subjectDTO.name}}</span>
+    <button class="delete"
+      (click)="delete(group); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<nav>
+	<a routerLink="/group-form" routerLinkActive="active">dodaj grupe</a>
+</nav>

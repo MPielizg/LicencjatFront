@@ -1,0 +1,9 @@
+<h3>Subjects:</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let subject of subjects"  (click)="onSelect(subject)" 
+  [class.selected]="subject === selectedSubject" class="col-1-4">
+    <div class="module subject">
+      <h4>{{subject.name}}</h4>
+    </div>
+  </a>
+</div>

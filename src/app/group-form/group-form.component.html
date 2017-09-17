@@ -1,0 +1,59 @@
+<form (submit)=addCustomGroup($event)>
+	<div class = "input">
+		<label>Nazwa grupy:</label>
+		<input type = "text">
+	</div>
+	<div class = "input">
+		<label>Login grupy:</label>
+		<input type = "text">
+	</div>
+	<div class = "input">
+		<button type = "submit">Dodaj</button>
+	</div>
+</form>
+<div class="col-wrapper">
+	<div class="col col-400">
+			<h2>Selected Users:</h2>
+	<ul class="users">
+		<li *ngFor="let user of groupCustom.userDTOs" (click)="onSelectUser(user)">
+		<span class="badge">{{user.phoneNumber}}</span>
+		<span>{{user.name}}</span>
+		<span>{{user.surname}}</span>
+		<button class="delete"
+			(click)="deleteUser(user)">x</button>
+		</li>
+	</ul>
+</div>
+<div class="col col-400">
+	<h2>Selected Groups:</h2>
+	<ul class="groups">
+		<li *ngFor="let group of groupCustom.groupDTOs">
+		<span class="badge">{{group.groupNumber}}</span>
+		<span>{{group.subjectDTO.name}}</span>
+		<button class="delete"
+			(click)="deleteGroup(group)">x</button>
+		</li>
+	</ul>
+</div>
+</div>
+<div class="col-wrapper">
+    <div class="col col-400">
+        <h2>Users:</h2>
+		<ul class="users">
+		  <li *ngFor="let user of users" (click)="onSelectUser(user)">
+			<span class="badge">{{user.phoneNumber}}</span>
+			<span>{{user.name}}</span>
+			<span>{{user.surname}}</span>
+		  </li>
+		</ul>
+  </div>
+    <div class="col col-400">
+		<h2>Groups:</h2>
+		<ul class="groups">
+		  <li *ngFor="let group of groups" (click)="onSelectGroup(group)">
+			<span class="badge">{{group.groupNumber}}</span>
+			<span>{{group.subjectDTO.name}}</span>
+		  </li>
+		</ul>
+	</div>
+</div>

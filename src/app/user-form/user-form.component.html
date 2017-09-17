@@ -1,0 +1,71 @@
+<h3>Formularz urzytkownika:</h3>
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">Imie</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Imie jest wymagane
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Nazwisko</label>
+        <input type="text" class="form-control" id="surname"
+        		required
+               [(ngModel)]="model.surname" name="surname"
+               #surname="ngModel">
+               <div [hidden]="surname.valid || name.pristine"
+             class="alert alert-danger">
+          Nazwisko jest wymagane
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="title">Tytul</label>
+        <input type="text" class="form-control" id="title"
+               [(ngModel)]="model.title" name="title">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Status</label>
+        <select class="form-control" id="status"
+                required
+                [(ngModel)]="model.status" name="status"
+                #status="ngModel">
+          <option *ngFor="let stat of statuses" [value]="stat">{{stat}}</option>
+        </select>
+        <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
+          Status jest wymagany
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="surname">Numer telefonu</label>
+        <input type="numer" class="form-control" id="phoneNumber"
+        		required
+               [(ngModel)]="model.phoneNumber" name="phoneNumber"
+               #phoneNumber="ngModel">
+               <div [hidden]="phoneNumber.valid || phoneNumber.pristine"
+             class="alert alert-danger">
+          Numer telefonu jest wymagany
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="surname">Login</label>
+        <input type="numer" class="form-control" id="login"
+        		required
+               [(ngModel)]="model.login" name="login"
+               #login="ngModel">
+               <div [hidden]="login.valid || login.pristine"
+             class="alert alert-danger">
+          Numer telefonu jest wymagany
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="goBack()">Back</button>
