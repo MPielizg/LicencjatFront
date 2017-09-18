@@ -20,9 +20,7 @@ export class LoginFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(!this.service.getUserLoggedIn){
-      this.router.navigate(['']);
-    }
+    this.service.logout();
   }
   
   loginUser(e) {
@@ -30,8 +28,6 @@ export class LoginFormComponent implements OnInit {
     this.password = e.target.elements[1].value;
     
     this.service.getPassword(this.userName).subscribe(passwCheck => this.passwCheck = passwCheck);
-    console.log(this.passwCheck);
-    debugger;
     if(this.password === this.passwCheck) {
       this.service.setUserLoggedIn(this.userName);
       this.router.navigate(['']);

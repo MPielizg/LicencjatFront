@@ -42,7 +42,7 @@ export class GroupFormComponent implements OnInit {
         this.groupCustom.name = e.target.elements[0].value;
         this.groupCustom.login = e.target.elements[1].value;
         this.groupCustom.subjectDTO = this.subjectService.selectedSubject;
-        this.groupCustom.createdBy = this.loginService.getUserName();
+        this.groupCustom.createdBy = localStorage.getItem('loggedUser');
         this.groupCustomService.createCustomGroup(this.groupCustom);
     }
 

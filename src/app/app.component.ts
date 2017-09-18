@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Message Exchanger Application';
+
+  
+  
+//   public localStorageItem(): boolean {
+//     if(localStorage.getItem('loggedUser')){
+//       return true;
+//     } else {
+//       return false;
+//     }
+// }
 }

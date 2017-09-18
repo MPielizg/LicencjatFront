@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 export class LoginFormService {
 
   private usersUrl = 'http://localhost:8080/usersAuth';
-  private userName: string;
   private isUserLoggedIn = false;
   
   constructor(
@@ -25,15 +24,16 @@ export class LoginFormService {
   
   setUserLoggedIn(name: string) {
     this.isUserLoggedIn = true;
-    this.userName = name;
+    localStorage.setItem('loggedUser', name);
   }
   
   getUserLoggedIn(): boolean {
     return this.isUserLoggedIn;
   }
 
-  getUserName(): string {
-    return this.userName;
+  logout(): void {
+    this.isUserLoggedIn = false;
+    localStorage.removeItem('loggedUser');
   }
 
 }

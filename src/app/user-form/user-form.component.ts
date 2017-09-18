@@ -30,7 +30,7 @@ export class UserFormComponent {
   onSubmit() {
     this.submitted = true;
     if (!this.model) { return; }
-    this.model.createdBy = this.loginService.getUserName();
+    this.model.createdBy = localStorage.getItem('loggedUser');
     this.userService.createUser(this.model);
   }
   
