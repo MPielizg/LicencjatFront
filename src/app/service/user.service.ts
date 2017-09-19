@@ -17,10 +17,10 @@ export class UserService {
   
   getUsers(): Observable<User[]> {
     return this.http.get(this.usersUrl)
-      .map(this.mapRooms);
+      .map(this.mapUser);
   }
   
-  mapRooms(response:Response): User[] {
+  mapUser(response:Response): User[] {
     return response.json().content;
   }
   

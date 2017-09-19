@@ -9,6 +9,11 @@
       (click)="delete(user); $event.stopPropagation()">x</button>
   </li>
 </ul>
+<div *ngIf="selectedUser">
+  <h2><label>Imie: </label>{{selectedUser.name}}</h2>
+  <h2><label>Nazwisko: </label>{{selectedUser.surname}}</h2>
+  <h2><label>Numer telefonu: </label>{{selectedUser.phoneNumber}}</h2>
+</div>
 <nav>
 	<a routerLink="/adduser" routerLinkActive="active">dodaj urzytkownika</a>
 </nav>
