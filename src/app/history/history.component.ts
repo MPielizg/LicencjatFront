@@ -11,13 +11,24 @@ import { HistoryService } from '../service/history-service';
 })
 export class HistoryComponent {
     selectedHistory: History;
-    history: History[];
+    historyItems: History[];
+    index: number;
 
     constructor(
         private service: HistoryService
     ) {}
 
     getHistory(): void {
-        this.service.getHistory().subscribe(history => this.history = history);
+        this.service.getHistory().subscribe(history => this.historyItems = history);
+    }
+
+    onSelect(history: History): void {
+        this.selectedHistory = history;
+    }
+
+    delete(history: History): void {
+        this.delete(history);
+        this.index = this.historyItems.indexOf(history);
+        this.historyItems.splice(this.index, 1);
     }
 }
