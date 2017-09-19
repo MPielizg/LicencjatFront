@@ -16,6 +16,7 @@ import { UserService } from './service/user.service';
 import { SubjectService } from './service/subject.service';
 import { GroupService } from './service/group.service';
 import { HistoryService } from './service/history-service';
+import { MessageFormService } from './service/message-form.service';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserGroupComponent } from './group/user-group/user-group.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -43,7 +44,7 @@ import { AuthGuard } from './auth.guard';
     HttpModule,
     FormsModule
   ],
-  providers: [ UserService, SubjectService, GroupService, LoginFormService, AuthGuard, GroupCustomService, HistoryService],
+  providers: [ UserService, SubjectService, GroupService, LoginFormService, AuthGuard, GroupCustomService, HistoryService, MessageFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

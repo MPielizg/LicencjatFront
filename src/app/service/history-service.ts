@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 import { History } from '../model/history';
 
@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HistoryService {
-    private headers = new Headers({'Content-Type': 'application/json'});
     private hitoryUrl = 'http://localhost:8080/history';
     
     constructor(
