@@ -1,14 +1,17 @@
 <h2>History:</h2>
 <ul class="history">
-  <li *ngFor="let history of historyItems" (click)="onSelect(history)"
+  <li *ngFor="let history of historyitems" (click)="onSelect(history)"
       [class.selected]="history === selectedHistory">
-    <span>{{history.date}}</span>
+    <span class="badge">{{history.date}}</span>
+    <span>From: {{history.origin}}</span>
+    <span>To: {{history.destination}}</span>
     <button class="delete"
       (click)="delete(history); $event.stopPropagation()">x</button>
   </li>
 </ul>
-<div *ngIf="selectedUser">
-  <h2><label>From: </label>{{selectedHistory.from}}</h2>
+<div *ngIf="selectedHistory">
+  <h2><label>From: </label>{{selectedHistory.origin}}</h2>
   <h2><label>To: </label>{{selectedHistory.destination}}</h2>
   <h2><label>Date: </label>{{selectedHistory.date}}</h2>
+  <h2><label>Message: </label>{{selectedHistory.message}}</h2>
 </div>

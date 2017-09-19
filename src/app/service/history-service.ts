@@ -24,8 +24,8 @@ export class HistoryService {
         return response.json().content;
     }
 
-    deleteHistoryItem(history: History): void {
-        this.http.delete(`${this.hitoryUrl}/${history.id}`);
+    deleteHistoryItem(id: number): void {
+        this.http.delete(`${this.hitoryUrl}/${id}`);
     }
 
 }

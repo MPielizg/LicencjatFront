@@ -11,9 +11,11 @@ import { GroupComponent } from './group/group.component';
 import { GroupFormComponent } from './group-form/group-form.component';
 import { SubjectComponent } from './subject/subject.component';
 import { MessageFormComponent } from './message-form/message-form.component';
+import { HistoryComponent } from './history/history.component';
 import { UserService } from './service/user.service';
 import { SubjectService } from './service/subject.service';
 import { GroupService } from './service/group.service';
+import { HistoryService } from './service/history-service';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserGroupComponent } from './group/user-group/user-group.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -31,7 +33,8 @@ import { AuthGuard } from './auth.guard';
     UserFormComponent,
     UserGroupComponent,
     LoginFormComponent,
-    MessageFormComponent
+    MessageFormComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { AuthGuard } from './auth.guard';
     HttpModule,
     FormsModule
   ],
-  providers: [ UserService, SubjectService, GroupService, LoginFormService, AuthGuard, GroupCustomService],
+  providers: [ UserService, SubjectService, GroupService, LoginFormService, AuthGuard, GroupCustomService, HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
