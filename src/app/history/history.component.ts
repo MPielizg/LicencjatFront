@@ -31,7 +31,7 @@ export class HistoryComponent implements OnInit {
     }
 
     delete(history: History): void {
-        this.service.deleteHistoryItem(history.id);
+        this.service.deleteHistoryItem(history.id).subscribe(result => console.log(result));
         this.index = this.historyitems.indexOf(history);
         this.historyitems.splice(this.index, 1);
     }

@@ -4,9 +4,10 @@
       [class.selected]="group === selectedGroup">
     <span class="badge">{{group.groupNumber}}</span>
     <span>{{group.subjectDTO.name}}</span>
-    <button class="delete"
-      (click)="delete(group); $event.stopPropagation()">x</button>
   </li>
+  <li *ngFor="let groupCustom of customGroups">
+  <span class="badge">{{groupCustom.name}}</span>
+  <span>{{groupCustom.login}}</span>
 </ul>
 <nav>
 	<a routerLink="/group-form" routerLinkActive="active">dodaj grupe</a>

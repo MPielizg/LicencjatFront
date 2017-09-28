@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, URLSearchParams } from '@angular/http';
 
 import { LoginFormService } from './login-form.service'
 
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class GroupCustomService {
 
-    private usersUrl = 'http://localhost:8080/customgroup';
+    private groupCustomUrl = 'http://localhost:8080/customgroup';
     
     constructor(
         private http: Http,
@@ -19,10 +19,22 @@ export class GroupCustomService {
     ) { }
 
     createCustomGroup(groupCustom: GroupCustom): Promise<GroupCustom> {
-        return this.http.post(this.usersUrl, groupCustom)
+        return this.http.post(this.groupCustomUrl, groupCustom)
           .toPromise()
           .then(() => groupCustom)
           .catch(this.handleError);
+    }
+
+    getGroupCustom(login: string, name: string): Observable<GroupCustom[]> {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('login', login);
+        params.set('name', name);
+        return this.http.get(this.groupCustomUrl, {params: params})
+        .map(this.mapCustomGroups);
+    }
+
+    mapCustomGroups(response: Response): GroupCustom[] {
+        return response.json();
     }
 
     private handleError(error: any): Promise<any> {

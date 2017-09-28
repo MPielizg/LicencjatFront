@@ -1,4 +1,10 @@
-<h2>Users:</h2>
+<div>
+  <h2>Group detail: </h2>
+  <h3><label>Numer Grupy: </label>{{groupService.group.groupNumber}}</h3>
+  <h3><label>Login: </label>{{groupService.group.login}}</h3>
+  <h3><label>Przedmiot: </label>{{groupService.group.subjectDTO.name}}</h3>
+</div>
+<h2>Users in Group:</h2>
 <ul class="users">
   <li *ngFor="let user of users" (click)="onSelect(user)"
       [class.selected]="user === selectedUser">

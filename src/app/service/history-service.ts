@@ -16,15 +16,21 @@ export class HistoryService {
 
     getHistory(): Observable<History[]> {
         return this.http.get(`${this.hitoryUrl}/${localStorage.getItem('loggedUser')}`)
-        .map(this.mapHistory);
+        .map(this.mapHistoryTab);
     }
 
-    mapHistory(response:Response): History[] {
+    mapHistoryTab(response:Response): History[] {
         return response.json().content;
     }
 
-    deleteHistoryItem(id: number): void {
-        this.http.delete(`${this.hitoryUrl}/${id}`);
+    deleteHistoryItem(id: number): Observable<History> {
+        debugger;
+        return this.http.delete(`${this.hitoryUrl}/${id}`)
+        .map(this.mapHistory);
+    }
+
+    mapHistory(response:Response): History {
+        return response.json().content;
     }
 
 }
