@@ -2,6 +2,7 @@ import { LoginFormService } from '../service/login-form.service';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'rxjs/add/observable/forkJoin';
 
 @Component({
   selector: 'app-login-form',
