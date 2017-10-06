@@ -1,4 +1,9 @@
 <h2>History:</h2>
+<form (submit) = setValue($event)>
+    <input type="date"/>
+    <input type="date"/>
+    <button type="submit">Search</button>
+</form>
 <ul class="history">
   <li *ngFor="let history of historyitems" (click)="onSelect(history)"
       [class.selected]="history === selectedHistory">

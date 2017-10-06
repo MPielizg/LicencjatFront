@@ -20,6 +20,7 @@ import { MessageFormService } from './service/message-form.service';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserGroupComponent } from './group/user-group/user-group.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginFormService } from './service/login-form.service';
 import { GroupCustomService } from './service/group-custom.service';
 import { AuthGuard } from './auth.guard';
@@ -35,7 +36,8 @@ import { AuthGuard } from './auth.guard';
     UserGroupComponent,
     LoginFormComponent,
     MessageFormComponent,
-    HistoryComponent
+    HistoryComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

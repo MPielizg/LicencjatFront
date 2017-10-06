@@ -9,11 +9,13 @@ import { GroupFormComponent } from './group-form/group-form.component';
 import { MessageFormComponent } from './message-form/message-form.component';
 import { AppComponent } from './app.component';
 import { HistoryComponent } from './history/history.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path: '', component:WelcomeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginFormComponent},
   {path: 'users', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'subjects', component: SubjectComponent, canActivate: [AuthGuard]},

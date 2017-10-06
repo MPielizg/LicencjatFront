@@ -30,5 +30,6 @@ select {
   border-radius: 4px;
 }
 .col-wrapper{width:1000px; margin:0 auto;}
-.col{margin:0 10px; float:left; display:inline;}
-.col-400{width:400px;}
+.col{margin:0 10px; display:inline;}
+.col-left{float: left;}
+.col-right{float: right;}

@@ -1,14 +1,17 @@
-<h2>Groups:</h2>
 <ul class="groups">
+  <h2>Groups:</h2>
   <li *ngFor="let group of groups" (click)="onSelect(group)"
       [class.selected]="group === selectedGroup">
     <span class="badge">{{group.groupNumber}}</span>
     <span>{{group.subjectDTO.name}}</span>
-  </li>
-  <li *ngFor="let groupCustom of customGroups">
-  <span class="badge">{{groupCustom.name}}</span>
-  <span>{{groupCustom.login}}</span>
+</li>
 </ul>
+<ul class="groups custom">
+  <h2>Custom Groups:</h2>
+  <li *ngFor="let groupCustom of customGroups">
+    <span class="badge">{{groupCustom.name}}</span>
+    <span>{{groupCustom.login}}</span>
+  </li>
 <nav>
 	<a routerLink="/group-form" routerLinkActive="active">dodaj grupe</a>
 </nav>

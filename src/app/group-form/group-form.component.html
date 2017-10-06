@@ -12,7 +12,7 @@
 	</div>
 </form>
 <div class="col-wrapper">
-	<div class="col col-400">
+	<div class="col col-left">
 			<h2>Selected Users:</h2>
 	<ul class="users">
 		<li *ngFor="let user of groupCustom.userDTOs" (click)="onSelectUser(user)">
@@ -24,7 +24,7 @@
 		</li>
 	</ul>
 </div>
-<div class="col col-400">
+<div class="col col-right">
 	<h2>Selected Groups:</h2>
 	<ul class="groups">
 		<li *ngFor="let group of groupCustom.groupDTOs">
@@ -37,7 +37,7 @@
 </div>
 </div>
 <div class="col-wrapper">
-    <div class="col col-400">
+    <div class="col col-left">
         <h2>Users:</h2>
 		<ul class="users">
 		  <li *ngFor="let user of users" (click)="onSelectUser(user)">
@@ -47,7 +47,7 @@
 		  </li>
 		</ul>
   </div>
-    <div class="col col-400">
+    <div class="col col-right">
 		<h2>Groups:</h2>
 		<ul class="groups">
 		  <li *ngFor="let group of groups" (click)="onSelectGroup(group)">
