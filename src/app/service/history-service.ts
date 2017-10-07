@@ -10,12 +10,16 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HistoryService {
     private hitoryUrl = 'http://localhost:8080/history';
+    private interval: Interval;
+
     constructor(
         private http: Http
     ) { }
 
-    getHistory(interval: Interval): Observable<History[]> {
-        return this.http.post(`${this.hitoryUrl}/${localStorage.getItem('loggedUser')}`, interval)
+    getHistory(startDate: Date, endDate: Date): Observable<History[]> {
+        debugger;
+        this.interval = new Interval(startDate.toString(), endDate.toString());
+        return this.http.post(`${this.hitoryUrl}/${localStorage.getItem('loggedUser')}`, this.interval)
         .map(this.mapHistoryTab);
     }
 

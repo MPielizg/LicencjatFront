@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { History } from '../model/history';
-import { Interval } from '../model/interval';
 
 import { HistoryService } from '../service/history-service';
 
@@ -16,17 +15,14 @@ export class HistoryComponent {
     index: number;
     startDate: Date;
     endDate: Date;
-    interval: Interval;
 
     constructor(
         private service: HistoryService
     ) {}
 
     getHistory(startDate: Date, endDate: Date): void {
-        this.interval.startDate = startDate;
-        this.interval.endDate = endDate;
         debugger;
-        this.service.getHistory(this.interval).subscribe(history => this.historyitems = history);
+        this.service.getHistory(this.startDate, this.endDate).subscribe(history => this.historyitems = history);
     }
 
     onSelect(history: History): void {

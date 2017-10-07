@@ -1,6 +1,6 @@
 export class Interval {
     constructor(
-        public startDate: Date,
-        public endDate: Date
+        public startDate: string,
+        public endDate: string
     ) {}
   }
