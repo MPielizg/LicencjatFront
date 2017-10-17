@@ -13,7 +13,27 @@
   <h2><label>Imie: </label>{{selectedUser.name}}</h2>
   <h2><label>Nazwisko: </label>{{selectedUser.surname}}</h2>
   <h2><label>Numer telefonu: </label>{{selectedUser.phoneNumber}}</h2>
+  <h2><label>Login: </label>{{selectedUser.login}}</h2>
 </div>
 <nav>
 	<a routerLink="/adduser" routerLinkActive="active">dodaj urzytkownika</a>
 </nav>
+<form (submit) = userSearch($event)>
+  <div class = "input">
+    <label>Poszukiwana fraza:</label>
+    <input type="text">
+    <div class = "input">
+        <button type = "submit">Szukaj</button>
+    </div>
+  </div>
+</form>
+<ul class="users">
+    <li *ngFor="let user of userSearchList" (click)="onSelect(user)"
+        [class.selected]="user === selectedUser">
+      <span class="badge">{{user.phoneNumber}}</span>
+      <span>{{user.name}}</span>
+      <span>{{user.surname}}</span>
+      <button class="delete"
+        (click)="delete(user); $event.stopPropagation()">x</button>
+    </li>
+  </ul>

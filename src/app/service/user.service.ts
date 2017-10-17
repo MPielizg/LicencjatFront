@@ -23,13 +23,19 @@ export class UserService {
   mapUser(response:Response): User[] {
     return response.json().content;
   }
+
+  userSearch(fraze: string): Observable<User[]> {
+    return this.http.get(this.usersUrl + '/search/' + fraze)
+    .map(this.mapUserJson);
+  }
+
+  mapUserJson(response:Response): User[] {
+    return response.json();
+  }
   
-  getUser(id: number): Promise<User> {
-    const url = `${this.usersUrl}/${id}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data as User)
-      .catch(this.handleError);
+  getUsersByLogin(name: string): Observable<User[]> {
+    return this.http.get(`${this.usersUrl}/${name}`)
+      .map(this.mapUserJson);
   }
   
   deleteUser(phoneNumber: number): Promise<void> {

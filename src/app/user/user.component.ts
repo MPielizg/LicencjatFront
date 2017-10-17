@@ -10,15 +10,21 @@ import { UserService } from '../service/user.service';
 })
 export class UserComponent implements OnInit {
   users: User[];
+  userSearchList: User[];
   selectedUser: User;
 
   constructor(
     private userService: UserService,
     private router: Router) { }
   
-  getUsers(): void {
-    this.userService
-    .getUsers().subscribe(users => this.users = users);
+  getUsersByLogin(): void {
+    this.userService.getUsersByLogin(localStorage.getItem('loggedUser'))
+    .subscribe(users => this.users = users);
+  }
+
+  userSearch(e): void {
+    this.userService.userSearch(e.target.elements[0].value)
+    .subscribe(userSearchList => this.userSearchList = userSearchList);
   }
   
   add(user: User): void {
@@ -40,7 +46,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getUsersByLogin();
   }
   
   onSelect(user: User): void {
