@@ -46,6 +46,12 @@ export class GroupComponent implements OnInit {
     this.router.navigate(['/user-groups']);
   }
 
+  onSelectCustom(groupCustom: GroupCustom): void {
+    this.selectedGroupCustom = groupCustom;
+    this.groupCustomService.groupCustom = groupCustom;
+    this.router.navigate(['/group-custom']);
+  }
+
   ngOnInit() {
     this.getGroups();
     this.getCustomGroups();

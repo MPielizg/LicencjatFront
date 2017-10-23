@@ -12,7 +12,6 @@ export class MessageFormService {
     ) { }
 
     sendMessage(message: string): Promise<String> {
-        debugger;
         return this.http.post(this.messageUrl, message)
         .toPromise()
         .then(() => message)

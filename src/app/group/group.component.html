@@ -8,7 +8,8 @@
 </ul>
 <ul class="groups custom">
   <h2>Custom Groups:</h2>
-  <li *ngFor="let groupCustom of customGroups">
+  <li *ngFor="let groupCustom of customGroups" (click)="onSelectCustom(groupCustom)"
+  [class.selected]="groupCustom === selectedGroup">
     <span class="badge">{{groupCustom.name}}</span>
     <span>{{groupCustom.login}}</span>
   </li>

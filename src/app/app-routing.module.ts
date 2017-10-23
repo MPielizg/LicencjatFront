@@ -10,6 +10,7 @@ import { MessageFormComponent } from './message-form/message-form.component';
 import { AppComponent } from './app.component';
 import { HistoryComponent } from './history/history.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { GroupCustomComponent } from './group/group-custom/group-custom.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'adduser', component: UserFormComponent, canActivate: [AuthGuard]},
   {path: 'groups', component: GroupComponent, canActivate: [AuthGuard]},
   {path: 'group-form', component: GroupFormComponent, canActivate: [AuthGuard]},
+  {path: 'group-custom', component: GroupCustomComponent, canActivate: [AuthGuard]},
   {path: 'user-groups', component: UserGroupComponent, canActivate: [AuthGuard]},
   {path: 'message', component: MessageFormComponent, canActivate: [AuthGuard]},
   {path: 'history', component: HistoryComponent, canActivate: [AuthGuard]}

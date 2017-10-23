@@ -23,6 +23,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginFormService } from './service/login-form.service';
 import { GroupCustomService } from './service/group-custom.service';
+import { GroupCustomComponent } from './group/group-custom/group-custom.component';
 import { AuthGuard } from './auth.guard';
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AuthGuard } from './auth.guard';
     LoginFormComponent,
     MessageFormComponent,
     HistoryComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    GroupCustomComponent
   ],
   imports: [
     BrowserModule,

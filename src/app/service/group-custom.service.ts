@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 export class GroupCustomService {
 
     private groupCustomUrl = 'http://localhost:8080/customgroup';
+    public groupCustom: GroupCustom;
     
     constructor(
         private http: Http,
